@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>NEXUS | Number & Text Intelligence</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+</head>
+
+<body>
+
+    <!-- Animated Background -->
+    <div class="background">
+        <div class="orb orb-one"></div>
+        <div class="orb orb-two"></div>
+        <div class="orb orb-three"></div>
+    </div>
+
+    <!-- Navigation -->
+    <header class="navbar">
+
+        <div class="brand">
+
+            <div class="brand-icon">
+                N
+            </div>
+
+            <div>
+                <h1>NEXUS</h1>
+                <span>INTELLIGENCE SUITE</span>
+            </div>
+
+        </div>
+
+        <div class="nav-status">
+            <span class="status-dot"></span>
+            SYSTEM ONLINE
+        </div>
+
+    </header>
+
+
+    <main class="container">
+
+        <!-- Hero -->
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <div class="eyebrow">
+                    PYTHON • ANALYTICS • GAME ENGINE
+                </div>
+
+                <h2>
+                    Explore.
+                    <span>Guess.</span>
+                    Analyze.
+                </h2>
+
+                <p>
+                    A unified intelligence playground combining
+                    randomized number challenges with powerful
+                    text-frequency analysis.
+                </p>
+
+            </div>
+
+            <div class="hero-badge">
+
+               
+
+        </section>
+
+
+        <!-- Main Grid -->
+        <section class="dashboard-grid">
+
+
+            <!-- Guessing Game -->
+            <article class="glass-card game-card">
+
+                <div class="card-header">
+
+                    <div class="card-title">
+
+                        <div class="icon-box game-icon">
+                            🎯
+                        </div>
+
+                        <div>
+                            <h3>Number Hunt</h3>
+                            <p>Randomized prediction engine</p>
+                        </div>
+
+                    </div>
+
+                    <span class="pill">
+                        RANDOM
+                    </span>
+
+                </div>
+
+
+                <div class="game-area">
+
+                    <div class="target-display">
+
+                        <span class="target-label">
+                            TARGET RANGE
+                        </span>
+
+                        <strong>
+                            01 — 100
+                        </strong>
+
+                        <span class="target-subtitle">
+                            Find the hidden number
+                        </span>
+
+                    </div>
+
+
+                    <div class="guess-control">
+
+                        <input
+                            id="guessInput"
+                            type="number"
+                            min="1"
+                            max="100"
+                            placeholder="Enter your guess..."
+                        >
+
+                        <button
+                            id="guessButton"
+                            class="primary-button"
+                        >
+                            <span>SUBMIT GUESS</span>
+                            <span>→</span>
+                        </button>
+
+                    </div>
+
+
+                    <div
+                        id="gameMessage"
+                        class="game-message"
+                    >
+                        Make your first guess.
+                    </div>
+
+
+                    <div class="stats-row">
+
+                        <div class="stat-box">
+
+                            <span>ATTEMPTS</span>
+
+                            <strong id="attempts">
+                                0
+                            </strong>
+
+                        </div>
+
+
+                        <div class="stat-box">
+
+                            <span>SCORE</span>
+
+                            <strong id="score">
+                                0
+                            </strong>
+
+                        </div>
+
+
+                        <div class="stat-box">
+
+                            <span>MAX</span>
+
+                            <strong>
+                                10
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        id="resetButton"
+                        class="secondary-button"
+                    >
+                        ↻ NEW GAME
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- Word Analyzer -->
+            <article class="glass-card analyzer-card">
+
+                <div class="card-header">
+
+                    <div class="card-title">
+
+                        <div class="icon-box analyzer-icon">
+                            ✦
+                        </div>
+
+                        <div>
+                            <h3>Text Intelligence</h3>
+                            <p>Word frequency analyzer</p>
+                        </div>
+
+                    </div>
+
+                    <span class="pill purple">
+                        ANALYZE
+                    </span>
+
+                </div>
+
+
+                <div class="analyzer-area">
+
+                    <textarea
+                        id="textInput"
+                        placeholder="Paste or type text here to analyze..."
+                    ></textarea>
+
+
+                    <div class="analyzer-actions">
+
+                        <button
+                            id="sampleButton"
+                            class="secondary-button"
+                        >
+                            LOAD SAMPLE
+                        </button>
+
+                        <button
+                            id="analyzeButton"
+                            class="primary-button"
+                        >
+                            ANALYZE TEXT →
+                        </button>
+
+                    </div>
+
+
+                    <div class="analysis-stats">
+
+                        <div class="analysis-stat">
+
+                            <span>WORDS</span>
+
+                            <strong id="totalWords">
+                                0
+                            </strong>
+
+                        </div>
+
+
+                        <div class="analysis-stat">
+
+                            <span>UNIQUE</span>
+
+                            <strong id="uniqueWords">
+                                0
+                            </strong>
+
+                        </div>
+
+
+                        <div class="analysis-stat">
+
+                            <span>CHARACTERS</span>
+
+                            <strong id="characters">
+                                0
+                            </strong>
+
+                        </div>
+
+
+                        <div class="analysis-stat">
+
+                            <span>LINES</span>
+
+                            <strong id="lines">
+                                0
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+        </section>
+
+
+        <!-- Frequency Section -->
+        <section class="glass-card frequency-card">
+
+            <div class="frequency-header">
+
+                <div>
+
+                    <span class="section-label">
+                        ANALYTICS
+                    </span>
+
+                    <h3>
+                        Word Frequency Intelligence
+                    </h3>
+
+                </div>
+
+                <span id="frequencyCount">
+                    TOP 15 WORDS
+                </span>
+
+            </div>
+
+
+            <div
+                id="frequencyList"
+                class="frequency-list"
+            >
+
+                <div class="empty-state">
+
+                    <div class="empty-icon">
+                        ◌
+                    </div>
+
+                    <h4>
+                        Awaiting analysis
+                    </h4>
+
+                    <p>
+                        Analyze some text to visualize
+                        word-frequency patterns.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Footer -->
+        <footer class="footer">
+
+            <div>
+                NEXUS INTELLIGENCE SUITE
+            </div>
+
+            <div>
+                BUILT WITH PYTHON • FLASK
+            </div>
+
+        </footer>
+
+    </main>
+
+
+    <!-- Toast -->
+    <div
+        id="toast"
+        class="toast"
+    >
+        <span id="toastMessage">
+            Ready
+        </span>
+    </div>
+
+
+    <script
+        src="{{ url_for('static', filename='script.js') }}"
+    ></script>
+
+    <footer class="developer-footer">
+    <span>Developed by</span>
+    <strong>GANESH PUDI</strong>
+</footer>
+
+</body>
+
+</html>
